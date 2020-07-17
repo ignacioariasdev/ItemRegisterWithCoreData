@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+//Fetch from persistence and reflect to the table view
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
