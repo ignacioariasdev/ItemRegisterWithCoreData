@@ -11,6 +11,8 @@ import UIKit
 
 //Fetch from persistence and reflect to the table view
 class ViewController: UIViewController {
+    
+    //Ready to start with CoreData Integration
 
     override func viewDidLoad() {
         super.viewDidLoad()
