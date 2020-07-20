@@ -21,13 +21,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        //Load persistence
         coreDataManager.load()
 
-        let navigationController = window?.rootViewController as! UINavigationController
+        //set the rootVC with NavBar
+//        let navigationController = window?.rootViewController as! UINavigationController
 
-        let baseListVC = navigationController.topViewController as! ViewController
+        //The first VC to appear is ViewController class
+//        let baseListVC = navigationController.topViewController as! ViewController
 
-        baseListVC.coreDataManager =  coreDataManager
+        //assigning the coreData to ViewController
+//        baseListVC.coreDataManager =  coreDataManager
+        
+        //New code
+        //Redirecting the code for a right direction CoreData based
+        
+        // Creating the instance of a UINavigationController because ViewController is that
+        let navBarInstance = window?.rootViewController as! UINavigationController
+        
+        //Accesing ViewController as it should be
+        let rightVC = navBarInstance.topViewController as! ViewController
+        
+        //Asign coreData to viewContrller
+        rightVC.coreDataManager = coreDataManager
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
