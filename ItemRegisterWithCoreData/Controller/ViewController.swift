@@ -15,9 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    // Instance of Core Data management
-    //    var coreDataManager: CoreDataManager!
-    
     //The item object being presented
     var items: [Item] = []
     
