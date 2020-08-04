@@ -10,6 +10,11 @@ import Foundation
 import CoreData
 
 class CoreDataManager {
+    
+    //Singleton
+    static let shared = CoreDataManager(modelName: "item")
+    
+    // MARK: - BASIC Set UP
     let persistentContainer: NSPersistentContainer
 
     //Gold

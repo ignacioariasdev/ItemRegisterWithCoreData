@@ -12,39 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    //instance of `item` the coreDataManager
-    let coreDataManager = CoreDataManager(modelName: "item")
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        
-        //Load persistence
-        coreDataManager.load()
-
-        //set the rootVC with NavBar
-//        let navigationController = window?.rootViewController as! UINavigationController
-
-        //The first VC to appear is ViewController class
-//        let baseListVC = navigationController.topViewController as! ViewController
-
-        //assigning the coreData to ViewController
-//        baseListVC.coreDataManager =  coreDataManager
-        
-        //New code
-        //Redirecting the code for a right direction CoreData based
-        
-        // Creating the instance of a UINavigationController because ViewController is that
-        let navBarInstance = window?.rootViewController as! UINavigationController
-        
-        //Accesing ViewController as it should be
-        let rightVC = navBarInstance.topViewController as! ViewController
-        
-        //Asign coreData to viewContrller
-        rightVC.coreDataManager = coreDataManager
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
